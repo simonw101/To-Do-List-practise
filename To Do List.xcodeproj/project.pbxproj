@@ -16,6 +16,7 @@
 		65F390FB257D56C3008DD050 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F390FA257D56C3008DD050 /* ToDo.swift */; };
 		65F390FE257D574B008DD050 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F390FD257D574B008DD050 /* TodoTableViewController.swift */; };
 		65F39101257D630C008DD050 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F39100257D630C008DD050 /* TodoViewController.swift */; };
+		65F39104257D6CB7008DD050 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F39103257D6CB7008DD050 /* CompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		65F390FA257D56C3008DD050 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		65F390FD257D574B008DD050 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		65F39100257D630C008DD050 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		65F39103257D6CB7008DD050 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				65F390FA257D56C3008DD050 /* ToDo.swift */,
 				65F390FD257D574B008DD050 /* TodoTableViewController.swift */,
 				65F39100257D630C008DD050 /* TodoViewController.swift */,
+				65F39103257D6CB7008DD050 /* CompleteViewController.swift */,
 			);
 			path = "To Do List";
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				65F390FE257D574B008DD050 /* TodoTableViewController.swift in Sources */,
 				65347D14257AC8F700974779 /* SceneDelegate.swift in Sources */,
 				65347D1C257AC8F700974779 /* To_Do_List.xcdatamodeld in Sources */,
+				65F39104257D6CB7008DD050 /* CompleteViewController.swift in Sources */,
 				65F39101257D630C008DD050 /* TodoViewController.swift in Sources */,
 				65F390FB257D56C3008DD050 /* ToDo.swift in Sources */,
 			);

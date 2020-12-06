@@ -13,6 +13,8 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var todoSwitch: UISwitch!
     
+    var toTableVc : TodoTableViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,12 @@ class TodoViewController: UIViewController {
             newTodo.name = name
             
             newTodo.important = todoSwitch.isOn
+            
+            toTableVc?.toDos.append(newTodo)
+            
+            toTableVc?.tableView.reloadData()
+            
+            navigationController?.popViewController(animated: true)
             
         }
         
