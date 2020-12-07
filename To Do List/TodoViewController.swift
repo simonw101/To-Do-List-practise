@@ -8,7 +8,7 @@
 import UIKit
 
 class TodoViewController: UIViewController {
-
+    
     @IBOutlet weak var todoTextField: UITextField!
     
     @IBOutlet weak var todoSwitch: UISwitch!
@@ -17,30 +17,32 @@ class TodoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
     }
-
+    
     @IBAction func addClicked(_ sender: Any) {
         
-        let newTodo = ToDo()
-        
-        if let name = todoTextField.text {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            newTodo.name = name
+            let newTodo = ToDoItem(context: context)
             
-            newTodo.important = todoSwitch.isOn
+            if let name = todoTextField.text {
+                
+                newTodo.name = name
+                
+                newTodo.important = todoSwitch.isOn
+                
+                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                
+                navigationController?.popViewController(animated: true)
+                
+                
+            }
             
-            toTableVc?.toDos.append(newTodo)
-            
-            toTableVc?.tableView.reloadData()
-            
-            navigationController?.popViewController(animated: true)
             
         }
-        
-        
         
     }
 }
