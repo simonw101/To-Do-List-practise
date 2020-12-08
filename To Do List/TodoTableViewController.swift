@@ -67,18 +67,11 @@ class TodoTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let toDoVC = segue.destination as? TodoViewController {
-            
-            toDoVC.toTableVc = self
-            
-        }
-        
         if let completeVc = segue.destination as? CompleteViewController {
             
-            if let todo = sender as? ToDo {
+            if let todo = sender as? ToDoItem {
                 
                 completeVc.todo = todo
-                completeVc.toTableVc = self
                 
             }
             

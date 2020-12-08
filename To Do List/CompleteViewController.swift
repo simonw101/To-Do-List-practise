@@ -9,22 +9,29 @@ import UIKit
 
 class CompleteViewController: UIViewController {
     
-    var todo = ToDo()
-
+    var todo : ToDoItem? = nil
+    
     @IBOutlet weak var completeLabel: UILabel!
     
-    var toTableVc : TodoTableViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if todo.important {
+        
+        if todo != nil {
             
-            completeLabel.text = "❗️" + todo.name
-            
-        } else {
-            
-            completeLabel.text = todo.name
+            if todo!.important {
+                
+                if let name = todo?.name {
+                
+                completeLabel.text = "❗️" + name
+                    
+                }
+                
+            } else {
+                
+                completeLabel.text = todo!.name
+                
+            }
             
         }
         
@@ -32,29 +39,43 @@ class CompleteViewController: UIViewController {
     
     @IBAction func completeClicked(_ sender: Any) {
         
-        if let todos = toTableVc?.toDos {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            var index = 0
-            
-            for x in todos {
+            if todo != nil {
                 
-                if x.name == todo.name {
-                    
-                    toTableVc?.toDos.remove(at: index)
-                    
-                    toTableVc?.tableView.reloadData()
-                    
-                    navigationController?.popViewController(animated: true)
-                    
-                    return
-                    
-                }
+                context.delete(todo!)
                 
-                index += 1
+                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                
+                navigationController?.popViewController(animated: true)
                 
             }
             
         }
+        
+//        if let todos = toTableVc?.toDos {
+//
+//            var index = 0
+//
+//            for x in todos {
+//
+//                if x.name == todo.name {
+//
+//                    toTableVc?.toDos.remove(at: index)
+//
+//                    toTableVc?.tableView.reloadData()
+//
+//                    navigationController?.popViewController(animated: true)
+//
+//                    return
+//
+//                }
+//
+//                index += 1
+//
+//            }
+            
+//        }
         
     }
     

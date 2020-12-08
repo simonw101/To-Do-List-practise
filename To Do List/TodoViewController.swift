@@ -13,8 +13,6 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var todoSwitch: UISwitch!
     
-    var toTableVc : TodoTableViewController? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
